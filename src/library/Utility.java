@@ -1,5 +1,7 @@
 package library;
 
+import java.math.BigInteger;
+
 /**
  * User: pete
  * Date: Nov 18, 2008
@@ -21,5 +23,29 @@ public class Utility {
         System.out.println( 696 % 10 );
 
         System.out.println( isWholeNumber( 696.0 ) );
+    }
+
+    public static String getFactorialAsString( long max ) {
+
+        BigInteger reallyBig = new BigInteger("1");
+
+        for( long current = max; current >0; current-- )
+            reallyBig = reallyBig.multiply( new BigInteger( String.valueOf( current ) ) );
+
+        return reallyBig.toString();
+    }
+
+    public static long addDigitsInNumber( long number ) {
+        return addDigitsInNumber( String.valueOf( number ) );
+    }
+
+    public static long addDigitsInNumber( String asAString ) {
+
+        long total = 0;
+
+        for( int i = 0; i < asAString.length(); i++ )
+            total += Character.getNumericValue( asAString.charAt( i ) );
+
+        return total;
     }
 }
