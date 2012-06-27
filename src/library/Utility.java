@@ -48,4 +48,15 @@ public class Utility {
 
         return total;
     }
+
+    public static int getSumOfProperDivisors( int max ){
+
+        int sum = 0;
+
+        for( int i = 1; i < max; i++ )
+            if( max % i == 0 )
+                sum += i;
+
+        return sum;
+    }
 }
