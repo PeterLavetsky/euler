@@ -1,4 +1,1 @@
-euler
-=====
-
-Project Euler
+Hello World!
